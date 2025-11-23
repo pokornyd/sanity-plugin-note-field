@@ -1,5 +1,5 @@
 import React from 'react'
-import { ObjectSchemaType, ObjectInputProps } from 'sanity'
+import type { StringInputProps, StringSchemaType } from 'sanity'
 
 export type ThemeColorToneKey =
   | 'default'
@@ -9,17 +9,11 @@ export type ThemeColorToneKey =
   | 'caution'
   | 'critical'
 
-export type noteSchemaType = Omit<ObjectSchemaType, 'options'> & {
-  options?: {
-    icon?: React.ReactNode
-    headline?: string
-    message: any
-    tone?: ThemeColorToneKey
-  }
+export type NoteOptions = {
+  icon?: React.ElementType
+  tone?: ThemeColorToneKey
 }
 
-export interface noteInputValue {
-  _type?: 'note'
-}
+export type noteSchemaType = StringSchemaType
 
-export type noteInputProps = ObjectInputProps<noteInputValue, noteSchemaType>
+export type noteInputProps = StringInputProps<StringSchemaType>
