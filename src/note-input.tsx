@@ -1,6 +1,7 @@
-import { Box, Card, Flex, Heading, Inline, Text } from '@sanity/ui'
-import startCase from 'lodash/startCase.js'
 import React from 'react'
+import { Box, Card, Flex, Text } from '@sanity/ui'
+import startCase from 'lodash/startCase.js'
+import { styled } from 'styled-components'
 
 import type { noteInputProps, NoteOptions } from './types'
 
@@ -22,32 +23,38 @@ const NoteInput = (
   if (!displayTitle && !description) return null
 
   return (
-    <Card ref={ref} data-note={pathId} padding={[2, 4]} radius={3} tone={tone}>
-      {displayTitle && (
-        <Box marginBottom={description ? 2 : 0}>
-          <Inline space={1}>
-            {Icon && <Icon />}
-            <Heading size={1}>{displayTitle}</Heading>
-          </Inline>
-        </Box>
-      )}
+    <Card ref={ref} data-note={pathId} padding={4} radius={2} tone={tone}>
+      <Flex>
+        {Icon && (
+          <Box>
+            <IconWrapper size={1}>
+              <Icon />
+            </IconWrapper>
+          </Box>
+        )}
+        <Box flex={1} marginLeft={Icon ? 3 : 0}>
+          {displayTitle && (
+            <Box marginBottom={description ? 3 : 0}>
+              <Text size={1} weight="medium">
+                {displayTitle}
+              </Text>
+            </Box>
+          )}
 
-      {description && (
-        <Flex align="center">
-          <Box style={{ flexShrink: 0, lineHeight: 0 }}>
-            {Icon && !displayTitle && <Icon style={{ fontSize: 24 }} />}
-          </Box>
-          <Box
-            marginLeft={displayTitle ? 0 : 3}
-            marginTop={!Icon && displayTitle ? 1 : 0}
-          >
-            <Text size={[1, 1, 1]}>{description}</Text>
-          </Box>
-        </Flex>
-      )}
+          {description && (
+            <Text size={1} muted>
+              {description}
+            </Text>
+          )}
+        </Box>
+      </Flex>
     </Card>
   )
 }
+
+const IconWrapper = styled(Text)`
+  color: var(--card-icon-color);
+`
 
 NoteInput.displayName = 'NoteInput'
 
