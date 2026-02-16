@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-note-field",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Display inline notes within your schemas",
   "keywords": [
     "sanity",
