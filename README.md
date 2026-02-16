@@ -18,7 +18,14 @@ yarn add sanity-plugin-note-field
 npm i sanity-plugin-note-field
 ```
 
-> **Warning** <br />This is a **Sanity Studio V3** plugin. For the V2 version, please refer to the [studio-v2 branch](https://github.com/ndimatteo/sanity-plugin-note-field/tree/studio-v2).
+> **Compatibility** <br />This release targets **Sanity Studio v5** and **React 19**.
+> For the legacy Studio v2 plugin, refer to the [studio-v2 branch](https://github.com/ndimatteo/sanity-plugin-note-field/tree/studio-v2).
+
+### Requirements
+
+- `sanity`: `^5`
+- `react`: `^19`
+- `node`: `>=18`
 
 <br />
 
@@ -56,18 +63,20 @@ defineField({
 ```
 
 ### Properties
-| Name          | Type                      | Description                                                                  |
-| --------      | ------------------------- | ---------------------------------------------------------------------------- | 
-| `type`        | string                    | **(Required)** Value must be set to `note`.                                  |
-| `name`        | string                    | **(Required)** The field name. This will be the key in the data record.      |
-| `title`       | string                    | **(Optional)** Short title, appears in bold above the optional description.  |
-| `description` | string / React.Component  | **(Optional)** Long form message, displayed under the title.                 |
+
+| Name          | Type                     | Description                                                                 |
+| ------------- | ------------------------ | --------------------------------------------------------------------------- |
+| `type`        | string                   | **(Required)** Value must be set to `note`.                                 |
+| `name`        | string                   | **(Required)** The field name. This will be the key in the data record.     |
+| `title`       | string                   | **(Optional)** Short title, appears in bold above the optional description. |
+| `description` | string / React.Component | **(Optional)** Long form message, displayed under the title.                |
 
 ### Options
-| Name          | Type                  | Description                                                                  |
-| --------      | --------------------- | ---------------------------------------------------------------------------- | 
-| `icon`        | React.Component       | **(Optional)** Display an icon alongside your note's title/message. <br />*Just remember that any schema file with icons in them should have a .jsx or .tsx extension.*                             |
-| `tone`        | string                | **(Optional)** The color of the note. <br />*Accepts any of the [Sanity UI Card](https://www.sanity.io/ui/docs/primitive/card#properties) tone values. Defaults to `primary`.*     |
+
+| Name   | Type            | Description                                                                                                                                                                    |
+| ------ | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `icon` | React.Component | **(Optional)** Display an icon alongside your note's title/message. <br />_Just remember that any schema file with icons in them should have a .jsx or .tsx extension._        |
+| `tone` | string          | **(Optional)** The color of the note. <br />_Accepts any of the [Sanity UI Card](https://www.sanity.io/ui/docs/primitive/card#properties) tone values. Defaults to `primary`._ |
 
 <br />
 

@@ -59,3 +59,9 @@ yalc.lock
 
 # Compiled plugin
 dist
+
+# TypeScript build info
+tsconfig.tsbuildinfo
+
+# npm (we use yarn)
+package-lock.json
