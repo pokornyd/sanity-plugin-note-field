@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Card, Flex, Text } from '@sanity/ui'
 import startCase from 'lodash/startCase.js'
-import { styled } from 'styled-components'
 
 import type { noteInputProps, NoteOptions } from './types'
 
@@ -27,9 +26,9 @@ const NoteInput = (
       <Flex>
         {Icon && (
           <Box>
-            <IconWrapper size={1}>
+            <Text size={1} style={{ color: 'var(--card-icon-color)' }}>
               <Icon />
-            </IconWrapper>
+            </Text>
           </Box>
         )}
         <Box flex={1} marginLeft={Icon ? 3 : 0}>
@@ -51,10 +50,6 @@ const NoteInput = (
     </Card>
   )
 }
-
-const IconWrapper = styled(Text)`
-  color: var(--card-icon-color);
-`
 
 NoteInput.displayName = 'NoteInput'
 
