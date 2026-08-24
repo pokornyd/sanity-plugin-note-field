@@ -1,18 +1,20 @@
+import {Box, Card, Flex, Text} from '@sanity/ui'
+import startCase from 'lodash-es/startCase.js'
 import React from 'react'
-import { Box, Card, Flex, Text } from '@sanity/ui'
-import startCase from 'lodash/startCase.js'
 
-import type { noteInputProps, NoteOptions } from './types'
+import type {noteInputProps} from './types'
 
 const NoteInput = (
-  props: noteInputProps & { ref?: React.Ref<HTMLDivElement> },
+  props: noteInputProps & {ref?: React.Ref<HTMLDivElement>},
 ): React.JSX.Element | null => {
-  const { ref, ...args } = props
-  const { title, description } = args.schemaType
-  const options = args.schemaType.options as NoteOptions | undefined
+  const {ref, ...args} = props
+  const {title, description} = args.schemaType
+  const options = args.schemaType.options
 
-  // get last item in args.path array
-  const pathId = String(args.path[args.path.length - 1] ?? '')
+  // the note's field name is the last path segment; segments can also be array
+  // keys or index tuples, which are not meaningful as an id here
+  const lastSegment = args.path.at(-1)
+  const pathId = typeof lastSegment === 'string' ? lastSegment : ''
 
   const displayTitle = startCase(pathId) === title ? null : title
   const Icon = options?.icon
@@ -26,7 +28,7 @@ const NoteInput = (
       <Flex>
         {Icon && (
           <Box>
-            <Text size={1} style={{ color: 'var(--card-icon-color)' }}>
+            <Text size={1} style={{color: 'var(--card-icon-color)'}}>
               <Icon />
             </Text>
           </Box>

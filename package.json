@@ -3,85 +3,70 @@
   "version": "4.0.0",
   "description": "Display inline notes within your schemas",
   "keywords": [
-    "sanity",
-    "sanity-plugin",
-    "note",
+    "custom field",
     "input",
-    "custom field"
+    "note",
+    "sanity",
+    "sanity-plugin"
   ],
   "homepage": "https://github.com/ndimatteo/sanity-plugin-note-field#readme",
   "bugs": {
     "url": "https://github.com/ndimatteo/sanity-plugin-note-field/issues"
   },
+  "license": "MIT",
+  "author": "Nick DiMatteo <hello@nickdimatteo.com>",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ndimatteo/sanity-plugin-note-field.git"
   },
-  "license": "MIT",
-  "author": "Nick DiMatteo <hello@nickdimatteo.com>",
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "source": "./src/index.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs",
-      "default": "./dist/index.esm.js"
+      "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
   "publishConfig": {
     "exports": {
-      ".": {
-        "import": "./dist/index.esm.js",
-        "require": "./dist/index.cjs",
-        "default": "./dist/index.esm.js"
-      },
+      ".": "./dist/index.js",
       "./package.json": "./package.json"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
   "scripts": {
-    "build": "plugin-kit verify-package --silent && pkg-utils build --strict --clean && node -e \"require('node:fs').copyFileSync('dist/index.esm.d.ts','dist/index.d.ts')\" && pkg-utils check",
+    "build": "plugin-kit verify-package --silent && pkg-utils build --strict --check --clean",
     "clean": "rimraf dist",
-    "format": "prettier --write --cache --ignore-unknown .",
+    "format": "oxfmt",
     "link-watch": "plugin-kit link-watch",
-    "lint": "eslint '**/*.+(ts|js|tsx|jsx)'",
+    "lint": "oxlint",
+    "prepare": "npm run build",
     "prepublishOnly": "npm run build",
-    "watch": "pkg-utils watch --strict",
-    "prepare": "npm run build"
+    "watch": "pkg-utils watch --strict"
   },
   "dependencies": {
     "@sanity/ui": "^4.0.6",
-    "lodash": "^4.17.23"
+    "lodash-es": "^4.17.23"
   },
   "devDependencies": {
-    "@sanity/pkg-utils": "10.4.4",
-    "@sanity/plugin-kit": "^4.0.20",
-    "@types/lodash": "^4.17.23",
+    "@sanity/pkg-utils": "12.3.0",
+    "@sanity/plugin-kit": "^10.0.8",
+    "@types/lodash-es": "^4.17.12",
     "@types/react": "^19.2.14",
-    "eslint": "^9.0.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "globals": "^17.3.0",
-    "prettier": "^3.8.1",
-    "prettier-plugin-packagejson": "^3.0.0",
+    "oxfmt": "^0.63.0",
+    "oxlint": "^1.79.0",
+    "oxlint-tsgolint": "^7.0.2001",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-is": "^19.2.8",
     "rimraf": "^6.1.3",
     "sanity": "^6.10.1",
     "styled-components": "^6.1.15",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.55.0"
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
     "react": "^19",
@@ -89,15 +74,7 @@
   },
   "browserslist": "extends @sanity/browserslist-config",
   "engines": {
-    "node": ">=22.12"
+    "node": ">=20.19 <22 || >=22.12"
   },
-  "sanityPlugin": {
-    "verifyPackage": {
-      "tsconfig": false,
-      "scripts": false,
-      "eslintImports": false,
-      "nodeEngine": false,
-      "sanityV2Json": false
-    }
-  }
+  "packageManager": "yarn@4.18.0"
 }
