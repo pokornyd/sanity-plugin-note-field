@@ -41,9 +41,11 @@
   "scripts": {
     "build": "plugin-kit verify-package --silent && pkg-utils build --strict --check --clean",
     "clean": "rimraf dist",
-    "format": "oxfmt",
+    "format": "oxfmt --write",
+    "format:check": "oxfmt --check",
     "link-watch": "plugin-kit link-watch",
     "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build",
     "watch": "pkg-utils watch --strict"
