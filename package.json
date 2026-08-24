@@ -55,6 +55,7 @@
     "lodash-es": "^4.17.23"
   },
   "devDependencies": {
+    "@sanity/browserslist-config": "^1.0.5",
     "@sanity/pkg-utils": "12.3.0",
     "@sanity/plugin-kit": "^10.0.8",
     "@types/lodash-es": "^4.17.12",

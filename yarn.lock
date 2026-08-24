@@ -10711,6 +10711,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sanity-plugin-note-field@workspace:."
   dependencies:
+    "@sanity/browserslist-config": "npm:^1.0.5"
     "@sanity/pkg-utils": "npm:12.3.0"
     "@sanity/plugin-kit": "npm:^10.0.8"
     "@sanity/ui": "npm:^4.0.6"

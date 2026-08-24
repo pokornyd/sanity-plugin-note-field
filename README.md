@@ -26,7 +26,7 @@ npm i sanity-plugin-note-field
 
 - `sanity`: `^6`
 - `react`: `^19.2`
-- `node`: `>=22.12`
+- `node`: `>=20.19 <22` or `>=22.12`
 
 <br />
 
