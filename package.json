@@ -45,9 +45,7 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "sanity.json",
-    "src",
-    "v2-incompatible.js"
+    "src"
   ],
   "scripts": {
     "build": "plugin-kit verify-package --silent && pkg-utils build --strict --clean && node -e \"require('node:fs').copyFileSync('dist/index.esm.d.ts','dist/index.d.ts')\" && pkg-utils check",
@@ -60,7 +58,6 @@
     "prepare": "npm run build"
   },
   "dependencies": {
-    "@sanity/incompatible-plugin": "^1.0.5",
     "@sanity/ui": "^4.0.6",
     "lodash": "^4.17.23"
   },
@@ -99,7 +96,8 @@
       "tsconfig": false,
       "scripts": false,
       "eslintImports": false,
-      "nodeEngine": false
+      "nodeEngine": false,
+      "sanityV2Json": false
     }
   }
 }
