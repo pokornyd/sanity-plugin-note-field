@@ -18,14 +18,15 @@ yarn add sanity-plugin-note-field
 npm i sanity-plugin-note-field
 ```
 
-> **Compatibility** <br />This release targets **Sanity Studio v5** and **React 19**.
+> **Compatibility** <br />This release targets **Sanity Studio v6** and **React 19**.
+> For Studio v5, use `sanity-plugin-note-field@3`.
 > For the legacy Studio v2 plugin, refer to the [studio-v2 branch](https://github.com/ndimatteo/sanity-plugin-note-field/tree/studio-v2).
 
 ### Requirements
 
-- `sanity`: `^5`
-- `react`: `^19`
-- `node`: `>=18`
+- `sanity`: `^6`
+- `react`: `^19.2`
+- `node`: `>=22.12`
 
 <br />
 

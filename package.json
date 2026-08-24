@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-note-field",
-  "version": "3.1.1",
+  "version": "4.0.0",
   "description": "Display inline notes within your schemas",
   "keywords": [
     "sanity",
@@ -61,7 +61,7 @@
   },
   "dependencies": {
     "@sanity/incompatible-plugin": "^1.0.5",
-    "@sanity/ui": "^3.1.11",
+    "@sanity/ui": "^4.0.6",
     "lodash": "^4.17.23"
   },
   "devDependencies": {
@@ -77,27 +77,29 @@
     "globals": "^17.3.0",
     "prettier": "^3.8.1",
     "prettier-plugin-packagejson": "^3.0.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-is": "^19.2.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-is": "^19.2.8",
     "rimraf": "^6.1.3",
-    "sanity": "^5.9.0",
+    "sanity": "^6.10.1",
+    "styled-components": "^6.1.15",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.55.0"
   },
   "peerDependencies": {
     "react": "^19",
-    "sanity": "^5"
+    "sanity": "^6.0.0-0"
   },
   "browserslist": "extends @sanity/browserslist-config",
   "engines": {
-    "node": ">=18"
+    "node": ">=22.12"
   },
   "sanityPlugin": {
     "verifyPackage": {
       "tsconfig": false,
       "scripts": false,
-      "eslintImports": false
+      "eslintImports": false,
+      "nodeEngine": false
     }
   }
 }
