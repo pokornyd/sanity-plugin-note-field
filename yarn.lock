@@ -3806,11 +3806,6 @@
     tar-fs "^3.1.2"
     tinyglobby "^0.2.15"
 
-"@sanity/incompatible-plugin@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@sanity/incompatible-plugin/-/incompatible-plugin-1.0.5.tgz#cdf50c88a0938906a15ac2eb6cc21cafea898b76"
-  integrity sha512-9JGAacbElUPy9Chghd+sllIiM3jAcraZdD65bWYWUVKkghOsf1L/+jFLz1rcAuvrA9o2s7Y+T75BNcXuLwRcvw==
-
 "@sanity/json-match@^1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@sanity/json-match/-/json-match-1.0.5.tgz#fcaa1a05f5b77e47437fdb00db7a63c072c92e9f"
