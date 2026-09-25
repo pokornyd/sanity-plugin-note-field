@@ -79,5 +79,10 @@
   "engines": {
     "node": ">=20.19 <22 || >=22.12"
   },
-  "packageManager": "yarn@4.18.0"
+  "packageManager": "yarn@4.18.0",
+  "sanityPlugin": {
+    "verifyPackage": {
+      "tsconfig": false
+    }
+  }
 }

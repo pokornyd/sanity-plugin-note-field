@@ -10,7 +10,9 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "dist",
-    "jsx": "preserve",
+    // pkg-utils 12+ takes JSX handling from here, and "preserve" (what plugin-kit's tsconfig check
+    // wants) ships raw JSX in dist that Studio can't parse. See sanity-io/plugins#1952.
+    "jsx": "react-jsx",
     "module": "preserve",
     "noEmit": true
   }
